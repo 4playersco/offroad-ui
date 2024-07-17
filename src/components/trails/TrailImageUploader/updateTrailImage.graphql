@@ -1,0 +1,5 @@
+mutation UPDATE_TRAIL_IMAGE($id: String!, $image: CloudinaryImageInput!) {
+  updateTrailImage(id: $id, image: $image) {
+    message
+  }
+}

@@ -1,0 +1,33 @@
+query MEMBER_PROFILE_QUERY($username: String) {
+  user(username: $username) {
+    id
+    firstName
+    lastName
+    username
+    gender
+    birthdate
+    email
+    joined
+    avatar {
+      id
+      publicId
+      url
+      smallUrl
+    }
+    contactInfo {
+      id
+      street
+      city
+      state
+      zip
+      phone
+    }
+    preferences {
+      id
+      emergencyContactName
+      emergencyContactPhone
+      photoPermissions
+    }
+    comfortLevel
+  }
+}

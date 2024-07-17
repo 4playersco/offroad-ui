@@ -1,0 +1,17 @@
+mutation LOG_ACTIVITY_MESSAGE(
+  $message: String!
+  $messageCode: String!
+  $time: DateTime!
+  $username: String!
+  $link: String
+) {
+  logActivityEvent(
+    message: $message
+    messageCode: $messageCode
+    time: $time
+    username: $username
+    link: $link
+  ) {
+    message
+  }
+}

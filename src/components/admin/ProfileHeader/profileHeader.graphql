@@ -1,0 +1,23 @@
+query ADMIN_PROFILE_HEADER_QUERY($username: String) {
+  user(username: $username) {
+    id
+    firstName
+    lastName
+    avatar {
+      id
+      url
+    }
+    joined
+    role
+    username
+    titles
+    office
+    accountType
+    rig {
+      image {
+        id
+        url
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+mutation UPDATE_AVATAR($data: ImageUpdateInput!) {
+  updateAvatar(data: $data) {
+    message
+  }
+}

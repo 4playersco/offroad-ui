@@ -1,0 +1,5 @@
+mutation DELETE_AVATAR($avatar: CloudinaryImageInput!) {
+  deleteAvatar(avatar: $avatar) {
+    message
+  }
+}

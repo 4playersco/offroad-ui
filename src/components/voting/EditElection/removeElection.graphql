@@ -1,0 +1,5 @@
+# mutation REMOVE_ELECTION_MUTATION($id: ID!) {
+#   removeElection(id: $id) {
+#     successMessage
+#   }
+# }

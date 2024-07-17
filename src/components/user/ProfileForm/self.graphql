@@ -1,0 +1,35 @@
+query SELF_PROFILE_QUERY {
+  user: myself {
+    id
+    accountType
+    accountStatus
+    firstName
+    lastName
+    username
+    gender
+    birthdate
+    email
+    joined
+    avatar {
+      id
+      publicId
+      url
+      smallUrl
+    }
+    contactInfo {
+      id
+      street
+      city
+      state
+      zip
+      phone
+    }
+    preferences {
+      id
+      emergencyContactName
+      emergencyContactPhone
+      photoPermissions
+    }
+    comfortLevel
+  }
+}

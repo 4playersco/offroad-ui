@@ -1,0 +1,125 @@
+@import "./variables.scss";
+@import "./partials/events";
+
+@mixin breakpoint($bp, $direction: min) {
+  @media (#{$direction}-width: $bp) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin container {
+  padding: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    padding: $space;
+  }
+
+  @include breakpoint($max-width) {
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+
+  @include breakpoint($bp-xl) {
+    padding: $space 0;
+  }
+}
+
+@mixin alignright {
+  clear: both;
+  display: block;
+  margin: 0 auto 1.5em;
+
+  @include breakpoint($bp-sm, max) {
+    width: 100%;
+    height: auto;
+  }
+
+  @include breakpoint($bp-sm) {
+    clear: none;
+    display: inline;
+    float: right;
+    margin-bottom: 0;
+    margin-left: calc($space / 2);
+    max-width: 50% !important;
+    height: auto;
+  }
+
+  @include breakpoint($bp-md) {
+    margin-left: $space;
+  }
+}
+
+@mixin alignleft {
+  clear: both;
+  display: block;
+  margin: 0 auto 1.5em;
+
+  @include breakpoint($bp-sm) {
+    clear: none;
+    display: inline;
+    float: left;
+    margin-bottom: 0;
+    margin-right: calc($space / 2);
+    max-width: 50% !important;
+    height: auto;
+  }
+
+  @include breakpoint($bp-md) {
+    margin-right: $space;
+  }
+}
+
+@mixin aligncenter {
+  display: block;
+  clear: both;
+  margin: 0 auto 1.5em;
+  width: 100%;
+  height: auto;
+}
+
+@mixin section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+@mixin darkSection($imgSrc) {
+  @include section;
+  background-color: $grey-light;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($grey-light, 0.95) 0%,
+    rgba($grey-light, 0.95) 100%
+  );
+  background-image: url(#{$imgSrc});
+  background-image: linear-gradient(
+      to bottom,
+      rgba($grey-light, 0.95) 0%,
+      rgba($grey-light, 0.95) 100%
+    ),
+    url(#{$imgSrc});
+  background-repeat: no-repeat, repeat;
+  background-position: center, center top;
+  background-size: contain, 25%;
+  border-top: 1px solid $black-lighter;
+  border-bottom: 1px solid $black-lighter;
+}
+
+@mixin icon {
+  font-family: "4players" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

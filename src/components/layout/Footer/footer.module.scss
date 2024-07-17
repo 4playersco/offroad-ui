@@ -1,0 +1,33 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.footer {
+  @include darkSection("/img/tracks.jpg");
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.5;
+
+  @include breakpoint($bp-md) {
+    height: $footer-height;
+  }
+
+  img {
+    border-radius: 8px;
+    width: 50px;
+    height: auto;
+  }
+
+  a {
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  p {
+    margin: 0;
+  }
+}

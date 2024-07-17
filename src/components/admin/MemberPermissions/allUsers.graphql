@@ -1,0 +1,12 @@
+query ALL_USERS_QUERY {
+  users {
+    id
+    firstName
+    lastName
+    email
+    role
+    accountStatus
+    accountType
+    office
+  }
+}

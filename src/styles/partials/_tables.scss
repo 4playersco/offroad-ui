@@ -1,0 +1,53 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+%table {
+  border: 1px solid $grey;
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    display: none;
+
+    @include breakpoint($bp-sm) {
+      display: table-header-group;
+    }
+  }
+
+  th {
+    @include breakpoint($bp-sm) {
+      background: $grey-light;
+      padding: 10px 7px;
+      color: $white;
+    }
+  }
+
+  tr {
+    display: grid;
+    grid-gap: 2px;
+    padding: 5px;
+
+    @include breakpoint($bp-sm) {
+      padding: 0;
+      display: table-row;
+    }
+
+    &:nth-child(even) {
+      background: $white-dark;
+    }
+  }
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint($bp-sm) {
+      display: table-cell;
+      padding: 5px 7px;
+    }
+  }
+}

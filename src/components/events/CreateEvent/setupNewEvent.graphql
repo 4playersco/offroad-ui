@@ -1,0 +1,18 @@
+query SETUP_NEW_EVENT_QUERY {
+  myself {
+    id
+    username
+    firstName
+    lastName
+  }
+  runLeaders: getRunLeaders {
+    id
+    username
+    firstName
+    lastName
+  }
+  trails: getTrails {
+    id
+    name
+  }
+}

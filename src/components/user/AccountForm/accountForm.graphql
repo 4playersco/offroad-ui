@@ -1,0 +1,31 @@
+query ACCOUNT_FORM_QUERY {
+  myself {
+    id
+    email
+    accountType
+    accountStatus
+    eventsRSVPd {
+      status
+      event {
+        id
+        type
+        startTime
+      }
+    }
+  }
+  logItems: getMembershipLogItems(username: "self", messageCode: DUES_PAID) {
+    id
+    time
+    message
+    logger {
+      id
+      firstName
+      lastName
+    }
+  }
+
+  # notifications: getEmailNotificationsStatus {
+  #   id
+  #   status
+  # }
+}

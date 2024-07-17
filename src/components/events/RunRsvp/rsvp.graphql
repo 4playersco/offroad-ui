@@ -1,0 +1,5 @@
+mutation RSVP_MUTATION($rsvp: RSVPInput) {
+  setRSVP(rsvp: $rsvp) {
+    message
+  }
+}

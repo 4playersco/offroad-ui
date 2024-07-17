@@ -1,0 +1,140 @@
+.race {
+  // section
+  padding: 20px;
+  background: $white-dark;
+  margin-bottom: 20px;
+}
+
+.fieldset {
+  // fieldset
+  padding: 20px;
+  background: white;
+  border: none;
+  position: relative;
+
+  &[disabled] .candidate {
+    &:after {
+      content: 'Your selection has been recorded';
+      color: white;
+      font-size: 40px;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background: rgba(lighten(0.2, $grey-light), 0.7);
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    label:hover {
+      border: 10px solid transparent;
+    }
+  }
+}
+
+.ballot-list {
+  // ul
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-gap: 10px;
+
+  li > div {
+    height: 100%;
+  }
+}
+
+.candidate {
+  // div
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+
+  &:hover label {
+    border: 10px solid $red-light;
+  }
+
+  [type='radio']:checked + label {
+    border: 10px solid $red;
+
+    &:after {
+      position: absolute;
+      content: 'Selected';
+      color: white;
+      font-size: 30px;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($red, 0.8);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  label {
+    display: block;
+    border: 10px solid transparent;
+    border-radius: 5px;
+    position: relative;
+    height: 100%;
+  }
+
+  input {
+    position: absolute;
+    left: -9999em;
+    height: 0;
+    width: 0;
+  }
+}
+
+.vote-button {
+  // button
+  border: none;
+  box-shadow: none;
+  border-radius: 3px;
+  padding: 16px 20px;
+  background: $success;
+  transition: background 0.3s;
+  cursor: pointer;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+
+  &:hover {
+    background: darken(0.2, $green);
+  }
+
+  & + & {
+    margin-left: 20px;
+  }
+
+  &:disabled {
+    background: $white-dark;
+    cursor: not-allowed;
+  }
+}
+
+.abstain-button {
+  @extend .vote-button;
+
+  && {
+    background: darken(0.2, $white-dark);
+
+    &:hover {
+      background: lighten(0.2, $grey-light);
+    }
+  }
+}

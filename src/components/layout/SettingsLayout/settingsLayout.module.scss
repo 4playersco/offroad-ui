@@ -1,0 +1,11 @@
+@import "@/styles/utilities";
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.nav {
+  margin-bottom: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    margin-bottom: $space;
+  }
+}

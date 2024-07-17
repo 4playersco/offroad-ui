@@ -1,0 +1,5 @@
+mutation LOGOUT_MUTATION {
+  logout {
+    message
+  }
+}

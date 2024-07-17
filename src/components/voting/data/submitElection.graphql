@@ -1,0 +1,5 @@
+mutation SUBMIT_ELECTION_MUTATION($election: ElectionInput!) {
+  submitElection(election: $election) {
+    id
+  }
+}

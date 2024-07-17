@@ -1,0 +1,8 @@
+query NEWSLETTER_PREFS_QUERY {
+  membersPref: newsletterPreferences(list: MEMBERS) {
+    status
+  }
+  generalPref: newsletterPreferences(list: GENERAL) {
+    status
+  }
+}

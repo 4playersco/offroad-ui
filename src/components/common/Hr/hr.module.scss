@@ -1,0 +1,22 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.hr {
+  height: 3px;
+  clear: both;
+  border: 0;
+  box-sizing: content-box;
+  overflow: visible;
+  margin: (calc($space / 2)) 0;
+  padding: 0;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADAQMAAABs5if8AAAABlBMVEXOzs7///9OjC+WAAAADklEQVQIHWM4wLCAIQEABgYBwZfXhZAAAAAASUVORK5CYII=)
+    0 100% repeat-x;
+
+  @include breakpoint($bp-sm) {
+    margin: $space 0;
+  }
+
+  @include breakpoint($bp-md) {
+    margin: ($space * 2) 0;
+  }
+}

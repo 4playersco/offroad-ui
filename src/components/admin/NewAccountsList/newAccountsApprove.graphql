@@ -1,0 +1,5 @@
+mutation NEW_ACCOUNTS_APPROVE_MUTATION($userId: ID!) {
+  unlockNewAccount(userId: $userId) {
+    message
+  }
+}

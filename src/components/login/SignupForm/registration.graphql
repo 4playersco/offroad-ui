@@ -1,0 +1,8 @@
+query REGISTRATION_QUERY($token: String!) {
+  getRegistration(token: $token) {
+    id
+    email
+    firstName
+    lastName
+  }
+}

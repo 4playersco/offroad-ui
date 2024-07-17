@@ -1,0 +1,69 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.mobile-nav {
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
+  height: 40px;
+  overflow: hidden;
+  position: absolute;
+  right: 10px;
+  text-indent: -9999em;
+  top: 10px;
+  width: 40px;
+
+  &:before,
+  &:after {
+    // @include icon;
+    transform: rotate(0);
+    color: $white;
+    display: block;
+    height: 100%;
+    left: 0;
+    line-height: 40px;
+    opacity: 1;
+    position: absolute;
+    text-align: center;
+    text-indent: 0;
+    top: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    width: 100%;
+  }
+
+  &:before {
+    content: "h";
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+
+  &:after {
+    transform: rotate(45deg);
+    content: "x";
+    font-size: 16px;
+    font-size: 1.6rem;
+    opacity: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include breakpoint($bp-md) {
+    display: none;
+  }
+}
+
+.active {
+  &:before {
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  &:after {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}

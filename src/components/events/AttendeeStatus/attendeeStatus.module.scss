@@ -1,0 +1,82 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.attendee-status {
+  font-family: $font-primary;
+  font-size: 1.3rem;
+  line-height: 0.8;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+
+  @include breakpoint($bp-sm) {
+    font-size: 1.6rem;
+  }
+
+  & > span {
+    margin-top: 5px;
+    margin-right: 5px;
+
+    @include breakpoint($bp-sm) {
+      margin-top: 7px;
+    }
+  }
+}
+
+.attendees-status--dark {
+  color: white;
+
+  & > span {
+    margin-top: 5px;
+    margin-left: 5px;
+
+    @include breakpoint($bp-sm) {
+      // margin-top: 7px;
+    }
+  }
+}
+
+.button {
+  border: none;
+  box-shadow: none;
+  background: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+%attendee-icon {
+  font-size: 3rem;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.attendee-status--icon {
+  @extend %attendee-icon;
+  color: $grey-light;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $success;
+    transition: color 0.3s;
+  }
+}
+
+.attendee-status-icon--going {
+  @extend %attendee-icon;
+  color: $success;
+}
+
+.attendee-status-icon--not-going {
+  @extend %attendee-icon;
+  color: $failure;
+}
+
+.attendee-status-icon--maybe {
+  @extend %attendee-icon;
+  color: $grey;
+}

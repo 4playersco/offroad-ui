@@ -1,0 +1,4 @@
+- [x] Install routing
+- [x] Install GraphQL
+- [x] Move all files
+- [x] Add types to global scope

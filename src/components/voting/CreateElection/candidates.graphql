@@ -1,0 +1,10 @@
+query CREATE_ELECTION_CANDIDATES_QUERY {
+  electionCandidates(accountType: FULL, accountStatus: ACTIVE) {
+    id
+    firstName
+    lastName
+    avatar {
+      url
+    }
+  }
+}

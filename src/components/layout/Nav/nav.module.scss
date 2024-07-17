@@ -1,0 +1,182 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.nav {
+  display: block;
+  padding: 0;
+  margin: 0;
+
+  @include clearfix;
+
+  @include breakpoint($bp-md) {
+    margin: 0 0 -6px;
+  }
+}
+
+.nav-list {
+  display: none;
+  margin: 0 (-(calc($space / 2))) 0 (-(calc($space / 2)));
+  padding: 0;
+
+  & li {
+    list-style: none;
+    display: block;
+  }
+
+  a {
+    display: block;
+    background: $grey-light;
+    color: $white;
+    padding: $space;
+    font-size: 2.2rem;
+
+    &:hover,
+    &:active {
+      background: $grey-lighter;
+    }
+  }
+
+  @include breakpoint($bp-sm) {
+    margin: 0 (-$space) 0 (-$space);
+  }
+
+  @include breakpoint($bp-md) {
+    display: inline;
+
+    a {
+      background: transparent;
+      color: inherit;
+    }
+
+    & > li {
+      list-style: none;
+      margin: 4px 1px;
+      padding: 0;
+      float: left;
+      line-height: 1;
+
+      & > a {
+        font-family: $font-primary;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1;
+        padding: 8px 10px 5px;
+        text-transform: uppercase;
+        color: $grey-light;
+        transition: all 0.3s;
+      }
+
+      &:not(:global(.active)):not(:global(.user)):hover {
+        & > a {
+          background: $grey-lighter;
+          border-radius: 3px;
+          color: white;
+          transition: all 0.3s;
+        }
+      }
+
+      &:global(.active) {
+        & > a {
+          background: $grey-light;
+          border-radius: 3px;
+          color: white;
+        }
+      }
+    }
+
+    // & > :global(li.user) {
+    //   list-style: none;
+    //   margin: 0;
+    //   padding: 0;
+    //   float: left;
+    //   position: relative;
+    // }
+  }
+}
+
+.nav-user {
+  position: relative;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: block;
+
+    @include breakpoint($bp-md) {
+      display: none;
+      position: absolute;
+      right: 0;
+      list-style: none;
+      text-align: left;
+      background: white;
+      border: 1px solid $white-dark;
+      border-radius: 2px;
+      padding: 5px 0 0;
+      width: 100px;
+      transform: opacity 0.3s;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        background: white;
+        border-top: 1px solid $white-dark;
+        border-right: 1px solid $white-dark;
+        transform: rotate(-45deg);
+        z-index: 1;
+        right: 10px;
+        bottom: calc(100% - 5px);
+        border-bottom-left-radius: 50%;
+      }
+
+      & > li {
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+
+        a {
+          background: none;
+          color: $grey-light;
+          padding: 10px 10px 7px;
+          display: block;
+          text-transform: uppercase;
+          font-family: $font-primary;
+          font-size: 1.4rem;
+          transition: all 0.3s;
+        }
+
+        &:hover {
+          a {
+            color: white;
+            background: $grey-lighter;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    ul {
+      display: block;
+      z-index: 100;
+    }
+  }
+}
+
+.mobile-nav-list--open {
+  display: block;
+}
+
+.user-image {
+  display: none;
+
+  @include breakpoint($bp-md) {
+    display: inline-block;
+    border: 1px solid $grey-light;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+}

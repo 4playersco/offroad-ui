@@ -1,0 +1,67 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.account {
+  &-form {
+  }
+
+  &-section-wrapper {
+    padding: (calc($space / 2)) 0;
+
+    @include breakpoint($bp-sm) {
+      padding: $space 0;
+    }
+
+    @include breakpoint($bp-md) {
+      padding: ($space * 2) 0;
+    }
+  }
+
+  &-section {
+    margin-bottom: ($space * 2);
+
+    @include breakpoint($bp-sm) {
+      display: grid;
+      grid-gap: (calc($space / 2));
+      grid-template-columns: 1fr 2fr;
+    }
+
+    @include breakpoint($bp-md) {
+      grid-gap: $space;
+    }
+  }
+
+  &-heading {
+    @include breakpoint($bp-sm) {
+      margin: 0;
+    }
+  }
+
+  &-content {
+    margin-top: 3px;
+  }
+
+  &-details {
+    margin-bottom: $space;
+
+    h4 {
+      margin: 0;
+    }
+  }
+}
+
+.icon {
+  color: $success;
+}
+
+.badge {
+  margin-left: 5px;
+}
+
+.email-actions {
+  @include breakpoint($max-width) {
+    display: grid;
+    grid-gap: $space;
+    grid-template-columns: 1fr 1fr;
+  }
+}

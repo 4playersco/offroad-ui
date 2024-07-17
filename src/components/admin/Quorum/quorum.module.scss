@@ -1,0 +1,61 @@
+@import "@/styles/variables";
+
+.quorum {
+  // div
+  margin: 40px auto;
+
+  .cols {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 20px;
+  }
+
+  table {
+    margin: 0 0 20px;
+  }
+
+  th {
+    text-align: left;
+    padding: 10px;
+  }
+
+  thead tr {
+    background: $grey-lighter;
+  }
+
+  tr {
+    &:nth-of-type(even) {
+      background: $white-dark;
+    }
+  }
+
+  td {
+    padding: 10px;
+    vertical-align: middle;
+
+    &:first-of-type {
+      width: 6%;
+    }
+
+    &:nth-of-type(3) {
+      width: 20%;
+    }
+
+    &:nth-of-type(4) {
+      width: 20%;
+    }
+
+    &:last-of-type {
+      width: 10%;
+    }
+  }
+
+  img {
+    border-radius: 50%;
+    display: block;
+  }
+
+  button {
+    margin: 0 auto;
+  }
+}

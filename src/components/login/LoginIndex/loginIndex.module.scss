@@ -1,0 +1,88 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  background: #747474;
+
+  &:before {
+    position: absolute;
+    background-image: url("/img/bg-login-4.jpg");
+    background-size: cover;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.login-box {
+  border: 1px solid $black;
+  z-index: 1;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    margin: $space;
+    width: 75%;
+    max-width: 445px;
+  }
+
+  @include breakpoint($bp-md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    max-width: 800px;
+    margin: 0;
+  }
+
+  section {
+    background: $white;
+    padding: $space;
+
+    @include breakpoint($bp-lg) {
+      padding: $space * 2;
+    }
+
+    & + section {
+      background: rgba($grey-light, 1);
+      background: $grey-light;
+      border-left: 1px solid $black;
+      color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  p + p {
+    margin-bottom: 0;
+    @include clearfix;
+  }
+
+  header {
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}

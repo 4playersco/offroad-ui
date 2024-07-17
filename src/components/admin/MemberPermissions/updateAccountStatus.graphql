@@ -1,0 +1,9 @@
+mutation UPDATE_ACCOUNT_STATUS_MUTATION(
+  $accountStatus: AccountStatus
+  $userId: ID!
+) {
+  updateAccountStatus(accountStatus: $accountStatus, userId: $userId) {
+    id
+    accountStatus
+  }
+}

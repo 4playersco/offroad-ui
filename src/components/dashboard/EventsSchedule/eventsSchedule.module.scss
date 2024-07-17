@@ -1,0 +1,82 @@
+@import "@/styles/variables";
+@import "@/styles/utilities";
+@import "@/styles/mixins";
+
+.dashboard-heading {
+  @extend %dashboard-heading;
+}
+
+.events-schedule {
+  line-height: 1;
+  margin-bottom: calc($space / 2);
+
+  @include breakpoint($bp-md) {
+    margin-bottom: $space;
+  }
+
+  @include breakpoint($bp-lg) {
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @include breakpoint($bp-md) {
+      padding: 0 0 10px;
+    }
+  }
+
+  li {
+    margin: 0 0 10px;
+    padding: 0;
+    display: flex;
+
+    & > a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  & > a {
+    float: right;
+  }
+
+  @include clearfix;
+}
+
+.calendar {
+  margin-right: 10px;
+  min-width: 36px;
+
+  @include breakpoint($bp-sm) {
+    min-width: 40px;
+  }
+
+  i {
+    vertical-align: middle;
+    color: $grey-light;
+    margin-top: 2px;
+
+    @include breakpoint($bp-sm) {
+      margin-top: 5px;
+    }
+  }
+}
+
+.hr {
+  height: 2px;
+  margin: 0 0 5px;
+  border: none;
+  background: $grey-lighter;
+
+  @include breakpoint($bp-md) {
+    margin: 0 0 10px;
+  }
+}
+
+.nothing-scheduled {
+  @extend %nothing-scheduled;
+}

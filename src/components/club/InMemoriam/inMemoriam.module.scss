@@ -1,0 +1,21 @@
+@import "@/styles/variables";
+@import "@/styles/utilities";
+@import "@/styles/mixins";
+
+.in-memoriam {
+  &-list {
+    @extend %table;
+
+    td {
+      &:first-of-type {
+        font-weight: 600;
+      }
+
+      &:last-of-type {
+        @include breakpoint($bp-sm) {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

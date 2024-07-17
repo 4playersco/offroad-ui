@@ -1,0 +1,133 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+@import "@/styles/utilities";
+
+.dashboard {
+  margin-top: calc(7px + (#{calc($space / 2)}));
+
+  @include breakpoint($bp-md) {
+    margin-top: calc(7px + #{$space});
+  }
+
+  @include breakpoint($bp-lg) {
+    display: grid;
+    grid-column-gap: $space-large;
+    grid-row-gap: $space-large;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.half {
+  grid-column-start: span 3;
+}
+
+.third {
+  grid-column-start: span 2;
+}
+
+.two-thirds {
+  grid-column-start: span 4;
+}
+
+%link {
+  padding: $space $space-large;
+  font-size: 32px;
+  display: block;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: $space;
+
+  &:before {
+    content: "";
+    background: url("/img/toyota.jpg");
+    background-image: linear-gradient(
+        90deg,
+        rgba($grey-light, 1) 0%,
+        rgba($grey-light, 0.75) 0%
+      ),
+      url("/img/toyota.jpg");
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    transition: 0.3s;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  &:hover:before,
+  &:focus:before {
+    transform: scale(1.2);
+    transition: 0.3s;
+  }
+
+  @include breakpoint($bp-lg) {
+    margin-bottom: 0;
+  }
+}
+
+.roster-link {
+  @extend %link;
+
+  &:before {
+    content: "";
+    background: url("/img/toyota.jpg");
+    background-image: linear-gradient(
+        90deg,
+        rgba($grey-light, 1) 0%,
+        rgba($grey-light, 0.75) 0%
+      ),
+      url("/img/toyota.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  @include breakpoint($bp-lg) {
+    background-position: center bottom;
+  }
+}
+
+.history-link {
+  @extend %link;
+
+  &:before {
+    background: url("/img/club.jpg");
+    background-image: linear-gradient(
+        90deg,
+        rgba($grey-light, 1) 0%,
+        rgba($grey-light, 0.75) 0%
+      ),
+      url("/img/club.jpg");
+    background-position: center 15%;
+    background-size: cover;
+
+    @include breakpoint($bp-lg) {
+      background-position: center;
+    }
+  }
+}
+
+.document-link {
+  @extend %link;
+
+  &:before {
+    background: url("/img/docs.jpg");
+    background-image: linear-gradient(
+        90deg,
+        rgba($grey-light, 1) 0%,
+        rgba($grey-light, 0.65) 0%
+      ),
+      url("/img/docs.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+}

@@ -1,0 +1,11 @@
+.rich-text {
+  background: white;
+
+  p {
+    margin-top: 0;
+
+    & + p {
+      margin-top: 10px;
+    }
+  }
+}

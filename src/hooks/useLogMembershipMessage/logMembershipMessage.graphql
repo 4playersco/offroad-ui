@@ -1,0 +1,15 @@
+mutation LOG_MEMBERSHIP_MESSAGE(
+  $date: DateTime!
+  $code: String!
+  $message: String!
+  $userId: ID!
+) {
+  logMembershipEvent(
+    message: $message
+    code: $code
+    date: $date
+    userId: $userId
+  ) {
+    message
+  }
+}

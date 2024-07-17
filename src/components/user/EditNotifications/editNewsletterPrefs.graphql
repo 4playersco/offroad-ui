@@ -1,0 +1,8 @@
+mutation EDIT_NEWSLETTER_PREFS_MUTATION(
+  $action: NewsletterAction!
+  $list: NewsletterList!
+) {
+  editNewsletterPreferences(action: $action, list: $list) {
+    message
+  }
+}

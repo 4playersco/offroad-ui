@@ -1,0 +1,21 @@
+@import "@/styles/utilities";
+
+.form {
+  @extend %form;
+}
+
+.form-field-wrapper {
+  @extend %form-field-wrapper;
+}
+
+.trail-form-label {
+  @extend %form-label;
+}
+
+.trail-form-field {
+  @extend %form-field;
+}
+
+.form-footer {
+  @extend %form-footer;
+}

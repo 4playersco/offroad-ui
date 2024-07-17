@@ -1,0 +1,32 @@
+.pagination-list {
+  padding: 0 10px;
+  margin: 20px auto;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
+  span,
+  a {
+    display: block;
+  }
+}
+
+.pagination-btn {
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+.pagination-btn--previous {
+  align-self: flex-start;
+}
+
+.pagination-btn--next {
+  align-self: flex-end;
+}

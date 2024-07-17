@@ -1,0 +1,110 @@
+@import "@/styles/variables";
+@import "@/styles/utilities";
+@import "@/styles/mixins";
+
+.dashboard-heading {
+  @extend %dashboard-heading;
+}
+
+.event-container {
+  padding-top: calc(800 / 1400 * 100%);
+  height: 0;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  margin: 0 0 (calc($space / 2));
+
+  @include breakpoint($bp-md) {
+    margin: 0 0 $space;
+  }
+
+  @include breakpoint($bp-lg) {
+    margin: 0;
+  }
+}
+
+.event-heading {
+  color: white;
+}
+
+.event-desc {
+  color: white;
+}
+
+.event {
+  background-color: $grey-light;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 50px (calc($space / 2)) (calc($space / 2)) (calc($space / 2));
+
+  @include breakpoint($bp-sm) {
+    padding: 100px $space $space $space;
+  }
+
+  @include breakpoint($bp-md) {
+    padding: 30px;
+  }
+}
+
+.event-details {
+  margin: 1em 0 (calc($space / 2));
+  width: 100%;
+  color: white;
+
+  @include breakpoint($bp-sm) {
+    margin: 1em 0 $space;
+    width: 70%;
+  }
+
+  // @include breakpoint($bp-md) {
+  //   width: 70%;
+  // }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 0.9;
+    margin: 0 0 (calc($space / 2));
+
+    @include breakpoint($bp-sm) {
+      font-size: 2.4rem;
+      margin: 0 0 $space;
+    }
+
+    @include breakpoint($bp-md) {
+      font-size: 4.8rem;
+      line-height: 0.85;
+    }
+
+    a {
+      color: white;
+      transition: 0.3s;
+
+      &:hover {
+        color: silver;
+      }
+    }
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    margin: 0;
+    line-height: 1;
+
+    @include breakpoint($bp-sm) {
+      font-size: 1.8rem;
+    }
+
+    @include breakpoint($bp-md) {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.nothing-scheduled {
+  @extend %nothing-scheduled;
+}

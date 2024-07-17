@@ -1,0 +1,6 @@
+query EVENT_QUERY($eventId: ID!) {
+  event: getEvent(eventId: $eventId) {
+    id
+    type
+  }
+}

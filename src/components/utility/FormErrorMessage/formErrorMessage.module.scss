@@ -1,0 +1,5 @@
+@import "@/styles/utilities";
+
+.error-message {
+  @extend %form-error-message;
+}

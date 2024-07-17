@@ -1,0 +1,67 @@
+query SETUP_EXISTING_EVENT_QUERY($eventId: ID!) {
+  event: getEvent(eventId: $eventId) {
+    id
+    type
+    title
+    description
+    featuredImage {
+      id
+      url
+      publicId
+    }
+    host {
+      id
+      firstName
+      lastName
+      avatar {
+        id
+        smallUrl
+      }
+      username
+    }
+    startTime
+    endTime
+    membersOnly
+    rsvps {
+      id
+      member {
+        id
+        firstName
+        lastName
+        avatar {
+          id
+          smallUrl
+        }
+      }
+      status
+    }
+    address
+    trailDifficulty
+    trailNotes
+    trail {
+      id
+      slug
+      name
+      address
+      avgDifficulty
+      avgRatings
+      currentConditions
+      conditionsLastReported
+      favoriteCount
+    }
+    rallyAddress
+    maxAttendees
+    maxRigs
+    changeDisabled
+  }
+  runLeaders: getRunLeaders {
+    id
+    username
+    firstName
+    lastName
+  }
+  trails: getTrails {
+    id
+    name
+  }
+}

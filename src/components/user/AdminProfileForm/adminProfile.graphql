@@ -1,0 +1,10 @@
+query MEMBER_ADMIN_PROFILE_QUERY($username: String) {
+  user(username: $username) {
+    id
+    titles
+    office
+    role
+    accountStatus
+    accountType
+  }
+}

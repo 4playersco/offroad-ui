@@ -1,0 +1,30 @@
+query DOCS_QUERY {
+  docs: getDocs {
+    bylaws {
+      name
+      link
+      date
+    }
+    sors {
+      name
+      link
+      date
+    }
+    archives {
+      year
+      monthlyArchives {
+        month
+        meetingMinutes {
+          name
+          link
+          date
+        }
+        newsletter {
+          name
+          link
+          date
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import "../@/styles/variables";
+@import "../@/styles/mixins";
+
+.activity {
+}
+
+.activity__aside {
+  @include breakpoint($bp-sm) {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.user-data__section {
+  margin-bottom: $space;
+
+  @include breakpoint($bp-md) {
+    margin: 0 0 ($space * 2);
+  }
+
+  h3 {
+    margin: 0 0 (calc($space / 2));
+
+    @include breakpoint($bp-md) {
+      margin: 0 0 $space;
+    }
+  }
+}
+
+.user-logs {
+}
+
+.calendar-list {
+  margin: 0;
+  padding: 0;
+
+  @include breakpoint($bp-md) {
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    border-bottom: 1px solid $white-dark;
+
+    &:first-child {
+      border-top: 1px solid $white-dark;
+    }
+
+    @include breakpoint($bp-md) {
+      margin: 0;
+      padding: $space;
+    }
+
+    & > div {
+      margin-right: (calc($space / 2));
+
+      @include breakpoint($bp-md) {
+        margin-right: $space;
+      }
+    }
+  }
+}

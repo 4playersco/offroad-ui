@@ -1,0 +1,14 @@
+query MESSAGE_QUERY {
+  myself {
+    id
+    role
+    accountStatus
+    username
+  }
+  getMessageRecipients {
+    id
+    username
+    firstName
+    lastName
+  }
+}

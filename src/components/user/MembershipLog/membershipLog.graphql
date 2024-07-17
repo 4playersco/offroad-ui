@@ -1,0 +1,17 @@
+query MEMBERSHIP_LOG_QUERY($username: String) {
+  user(username: $username) {
+    id
+    membershipLog {
+      id
+      time
+      message
+      messageCode
+      logger {
+        id
+        username
+        firstName
+        lastName
+      }
+    }
+  }
+}

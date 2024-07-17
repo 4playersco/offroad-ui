@@ -1,0 +1,5 @@
+mutation DELETE_EVENT_IMAGE($avatar: CloudinaryImageInput!) {
+  deleteAvatar(avatar: $avatar) {
+    message
+  }
+}

@@ -1,0 +1,55 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.tabs {
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    border-bottom: 1px solid $grey;
+  }
+
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+  }
+
+  a {
+    @include breakpoint($bp-sm, max) {
+      font-size: 12px;
+    }
+
+    display: block;
+    padding: 5px (calc($space / 2));
+
+    @include breakpoint($bp-md) {
+      padding: (calc($space / 2)) $space;
+    }
+  }
+}
+
+.active {
+  border: 1px solid $grey;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: $grey-light;
+  position: relative;
+  height: 100%;
+
+  &:after {
+    content: "";
+    background: $white;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+  }
+
+  &:hover {
+    color: $grey-light;
+  }
+}

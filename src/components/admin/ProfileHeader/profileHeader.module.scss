@@ -1,0 +1,179 @@
+@import "@/styles/utilities";
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+header {
+  margin: 0 auto;
+}
+
+.user-vehicle {
+  height: 175px; // todo
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 1px solid $grey-light;
+  margin-top: 5px;
+
+  @include breakpoint($bp-sm) {
+    height: 225px; // todo
+  }
+
+  @include breakpoint($bp-md) {
+    height: 370px;
+  }
+}
+
+.user-header {
+  margin-top: -10px;
+  margin-bottom: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 3fr 1fr;
+    margin-top: -30px;
+  }
+
+  @include breakpoint($bp-md) {
+    margin-bottom: 0;
+    grid-template-columns: 3fr 1fr;
+    margin-top: -50px;
+  }
+}
+
+.user-demographics {
+  // width: 60%; // Without actions to the right
+  display: flex;
+
+  @include breakpoint($bp-md) {
+    // padding: (calc($space / 2)) $space;
+  }
+
+  img {
+    border-radius: 50%;
+    border: 1px solid $grey-light;
+    box-shadow: 0 0 0 2px $white;
+    margin: 5px 10px;
+    height: 50px;
+    width: 50px;
+
+    @include breakpoint($bp-sm) {
+      margin: 10px 20px;
+      height: 80px;
+      width: 80px;
+    }
+
+    @include breakpoint($bp-md) {
+      box-shadow: 0 0 0 5px $white;
+      margin: 15px 30px;
+      height: 130px;
+      width: 130px;
+    }
+  }
+}
+
+.user-name-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 10px;
+
+  @include breakpoint($bp-sm) {
+    padding-right: 5px;
+  }
+}
+
+.user-name {
+  margin: 0 0 2px;
+  font-size: 1rem;
+
+  @include breakpoint($bp-sm) {
+    margin: 0 0 2px;
+    font-size: 1.3rem;
+  }
+
+  @include breakpoint($bp-md) {
+    margin: 0 0 2px;
+    font-size: 1.6rem;
+  }
+}
+
+.user-full-name {
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.user-info {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.1rem;
+
+  li {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    padding: 0;
+
+    &:before {
+      margin-right: 5px;
+      content: "\2022";
+    }
+
+    &:first-child {
+      margin-left: 0;
+
+      &:before {
+        margin-right: 0;
+        content: "";
+      }
+    }
+  }
+}
+
+.user-actions {
+  padding: 0;
+  list-style: none;
+  justify-self: right;
+  margin-right: 10px;
+
+  @include breakpoint($bp-sm) {
+    margin-right: 20px;
+  }
+
+  @include breakpoint($bp-md) {
+    margin-right: 30px;
+  }
+
+  li {
+    display: inline-block;
+    line-height: 1;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    // a {
+    //   line-height: 1;
+    //   color: $white;
+    //   background: $red;
+    //   font-size: 12px;
+    //   padding: 5px 10px;
+    //   transition: background 0.3s;
+
+    //   &:hover {
+    //     background: $red-light;
+    //   }
+    // }
+  }
+}
+
+.nav {
+  margin: 0 0 (calc($space / 2));
+
+  @include breakpoint($bp-md) {
+    margin: 0 0 $space;
+  }
+}

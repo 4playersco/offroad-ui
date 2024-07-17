@@ -1,0 +1,10 @@
+query NEW_ACCOUNTS_QUERY {
+  users(accountStatus: [LOCKED], accountType: [GUEST]) {
+    id
+    firstName
+    lastName
+    username
+    birthdate
+    gender
+  }
+}

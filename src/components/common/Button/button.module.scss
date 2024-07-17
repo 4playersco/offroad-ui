@@ -1,0 +1,120 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.wrapper {
+  // span
+  & + & {
+    margin-left: 15px;
+  }
+}
+
+.button {
+  border: 2px solid black;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 8px 8px 5px;
+  font-family: $font-primary;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 1;
+  color: black;
+  transition: 0.3s;
+  cursor: pointer;
+  text-align: center;
+
+  @include breakpoint($bp-md) {
+    border: 3px solid black;
+    padding: 10px 10px 7px;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  &:hover {
+    color: $silver;
+    border-color: $silver;
+  }
+
+  &:active,
+  &.selected,
+  &.selected:hover {
+    color: white;
+    background: black;
+    border-color: black;
+  }
+
+  &:disabled {
+    color: $silver;
+    background: $grey;
+    border-color: $grey;
+
+    &:hover {
+      color: $silver;
+    }
+  }
+
+  &--ghost {
+    border: 2px solid white;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 8px 8px 5px;
+    font-family: $font-primary;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+
+    @include breakpoint($bp-md) {
+      border: 3px solid white;
+      padding: 10px 10px 7px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    &:hover {
+      color: $silver;
+      border-color: $silver;
+    }
+
+    &:active,
+    &.selected,
+    &.selected:hover {
+      color: black;
+      background: white;
+      border-color: white;
+    }
+
+    &:disabled {
+      color: $grey-light;
+      background: $grey-lighter;
+      border-color: $grey-lighter;
+
+      &:hover {
+        color: $grey-light;
+        background: $grey-lighter;
+        border-color: $grey-lighter;
+      }
+    }
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: $silver;
+  background: $grey;
+  border-color: $grey;
+
+  &:hover {
+    color: $silver;
+  }
+}

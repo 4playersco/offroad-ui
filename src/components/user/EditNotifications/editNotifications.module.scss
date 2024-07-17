@@ -1,0 +1,104 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+@import "@/styles/utilities";
+
+.notifications {
+  &-section-wrapper {
+    padding: (calc($space / 2)) 0;
+
+    @include breakpoint($bp-sm) {
+      padding: $space 0;
+    }
+
+    @include breakpoint($bp-md) {
+      padding: ($space * 2) 0;
+    }
+  }
+
+  &-section {
+    margin-bottom: ($space * 2);
+
+    @include breakpoint($bp-sm) {
+      display: grid;
+      grid-gap: (calc($space / 2));
+      grid-template-columns: 1fr 2fr;
+    }
+
+    @include breakpoint($bp-md) {
+      grid-gap: $space;
+    }
+
+    p {
+      margin-top: 5px;
+
+      & + p {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  &-heading {
+    @include breakpoint($bp-sm) {
+      margin: 0;
+    }
+  }
+
+  &-content {
+    margin-top: 3px;
+  }
+
+  &-details {
+    margin-bottom: $space;
+
+    h4 {
+      margin: 0;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+////
+
+.email-actions {
+  @include breakpoint($max-width) {
+    display: grid;
+    grid-gap: $space;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.change-notifications {
+  margin-bottom: calc($space / 2);
+  background: $white-dark;
+  padding: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    margin-bottom: $space;
+    padding: $space;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.form {
+  @extend %form;
+  padding: 0;
+}
+
+.form-field-wrapper {
+  @extend %form-field-wrapper;
+}
+
+.form-label {
+  @extend %form-label;
+}
+
+.form-field {
+  @extend %form-field;
+}
+
+.table {
+  width: 100%;
+}

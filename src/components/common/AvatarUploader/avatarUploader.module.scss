@@ -1,0 +1,42 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+@import "@/styles/utilities";
+
+.uploader {
+  h4 {
+    margin: 0 0 5px;
+  }
+}
+
+.uploader-contents {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  margin-right: $space;
+  border-radius: 100%;
+  border: 1px solid $grey-light;
+}
+
+.uploader-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: none;
+}
+
+.upload-button {
+  margin: 0 10px 0 0;
+}
+
+.reqs {
+  margin-top: 5px;
+}
+
+.icon {
+  color: $success;
+  margin-left: 5px;
+}

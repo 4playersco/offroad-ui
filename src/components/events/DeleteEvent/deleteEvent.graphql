@@ -1,0 +1,5 @@
+mutation DELETE_EVENT_MUTATION($id: ID!) {
+  deleteEvent(id: $id) {
+    message
+  }
+}

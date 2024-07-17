@@ -1,0 +1,5 @@
+mutation CREATE_TRAIL_MUTATION($trail: TrailInput!) {
+  createTrail(trail: $trail) {
+    message
+  }
+}

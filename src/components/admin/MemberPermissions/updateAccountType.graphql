@@ -1,0 +1,6 @@
+mutation UPDATE_ACCOUNT_TYPE_MUTATION($accountType: AccountType, $userId: ID!) {
+  updateAccountType(accountType: $accountType, userId: $userId) {
+    id
+    accountType
+  }
+}

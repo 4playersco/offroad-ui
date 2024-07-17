@@ -1,0 +1,91 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+%icon-scaffolding {
+  text-indent: 0;
+  font-family: "4players" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+  &[data-icon]:before {
+    @include icon;
+  }
+}
+
+// Icon font generated Fontastic.me acct
+// Unicode values taken from Fontastic stylesheet
+$icons: (
+  "comment": "\61",
+  "success": "\62",
+  "arrow-down": "\63",
+  "arrow-left": "\64",
+  "arrow-right": "\65",
+  "arrow-up": "\66",
+  "directions": "\67",
+  "location": "\68",
+  "time": "\69",
+  "date": "\6a",
+  "menu": "\6b",
+  "exit": "\6c",
+  "fail": "\6d",
+  "map": "\6e",
+  "user": "\6f",
+  "user-add": "\70",
+  "list": "\71",
+  "rigbook": "\72",
+  "unknown": "\73",
+  "mail": "\74",
+  "announcements": "\75",
+  "photos": "\76",
+  "phone": "\77",
+  "profile": "\78",
+  "notification-none": "\79",
+  "notification-same": "\7a",
+  "edit": "\41",
+  "delete": "\42",
+  "add": "\43",
+  "bandaid": "\44",
+  "trail": "\45",
+  "settings": "\46",
+  "loading": "\47",
+  "run": "\48",
+  "clinic": "\4a",
+  "social": "\4b",
+  "meeting": "\4c",
+  "collection": "\4d",
+  "fundraising": "\49",
+  "lock": "\4e",
+  "count": "\4f",
+  "camping": "\50",
+);
+
+@each $name, $content in $icons {
+  .icon-#{$name} {
+    line-height: 20px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    box-sizing: content-box;
+    display: inline-block;
+    text-indent: -9999em;
+    overflow: hidden;
+    position: relative;
+    font-size: 2rem;
+
+    &:before {
+      @extend %icon-scaffolding;
+      content: $content;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

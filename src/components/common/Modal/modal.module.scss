@@ -1,0 +1,127 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.main {
+  &-modal {
+    // Required modal styles
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    // Custom styles
+    background: white;
+    border: none;
+
+    @include breakpoint($bp-md) {
+    }
+  }
+
+  &-modal__container {
+  }
+
+  &-modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $grey-lighter;
+  }
+
+  &-modal__heading {
+    margin: 0;
+    padding: 20px;
+  }
+
+  &-modal__exit-container {
+    border-left: 1px solid $grey-lighter;
+    padding: 20px;
+  }
+
+  &-modal__exit-button {
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &-modal__exit-icon {
+    $size: 5rem;
+    font-size: $size;
+    line-height: $size;
+    height: $size;
+    width: $size;
+  }
+
+  &-modal__main {
+    padding: 20px;
+  }
+}
+
+.side {
+  &-modal {
+    // Required modal styles
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 0;
+
+    // Custom styles
+    background: white;
+    border: none;
+    border-left: 1px solid $grey-lighter;
+    box-shadow: 0 0px 20px black;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    @include breakpoint($bp-sm) {
+      left: auto;
+      width: 400px;
+    }
+  }
+
+  &-modal__container {
+  }
+
+  &-modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $grey-lighter;
+  }
+
+  &-modal__heading {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 2rem;
+  }
+
+  &-modal__exit-container {
+    border-left: 1px solid $grey-lighter;
+    padding: 10px;
+  }
+
+  &-modal__exit-button {
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &-modal__exit-icon {
+    $size: 3rem;
+    font-size: $size;
+    line-height: $size;
+    height: $size;
+    width: $size;
+  }
+
+  &-modal__main {
+    padding: 20px;
+  }
+}

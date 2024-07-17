@@ -1,0 +1,5 @@
+mutation EDIT_TRAIL_MUTATION($trail: TrailInput!, $id: ID!) {
+  updateTrail(trail: $trail, id: $id) {
+    message
+  }
+}

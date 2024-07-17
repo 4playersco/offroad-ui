@@ -1,0 +1,30 @@
+# query RUN_REPORT_QUERY($eventId: ID!) {
+#   event: runReportInfo(eventId: $eventId) {
+#     id
+#     type
+#     title
+#     host {
+#       id
+#       firstName
+#       lastName
+#     }
+#     rsvps {
+#       id
+#       member {
+#         id
+#         firstName
+#         lastName
+#       }
+#     }
+#     trailDifficulty
+#     trail {
+#       id
+#       name
+#     }
+#   }
+#   users: runReportUsers {
+#     id
+#     firstName
+#     lastName
+#   }
+# }

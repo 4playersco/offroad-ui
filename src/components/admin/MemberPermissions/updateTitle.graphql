@@ -1,0 +1,6 @@
+mutation UPDATE_TITLE_MUTATION($titles: [Title], $userId: ID!) {
+  updateTitles(titles: $titles, userId: $userId) {
+    id
+    titles
+  }
+}

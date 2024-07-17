@@ -1,0 +1,104 @@
+@import "@/styles/variables";
+@import "@/styles/utilities";
+@import "@/styles/mixins";
+
+.officers-content {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bp-sm) {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: $space;
+  }
+}
+
+.officers-lists {
+  order: 2;
+
+  @include breakpoint($bp-sm) {
+    order: 1;
+  }
+}
+
+.officers-list {
+  @extend %table;
+
+  th {
+    @include breakpoint($bp-sm) {
+      width: 50%;
+    }
+  }
+
+  td {
+    display: table-cell;
+    align-items: none;
+
+    @include breakpoint($bp-sm) {
+      width: 50%;
+    }
+
+    &:nth-of-type(2) {
+      font-style: italic;
+
+      @include breakpoint($bp-sm) {
+        font-style: normal;
+      }
+    }
+
+    // div {
+    //   display: block;
+    //   width: 100%;
+    //   position: relative;
+    // }
+  }
+}
+
+.aside {
+  display: block;
+  order: 1;
+
+  @include breakpoint($bp-sm) {
+    border-left: 1px solid $grey;
+    order: 2;
+  }
+}
+
+.aside-content {
+  @include breakpoint($bp-sm) {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.aside-list {
+  margin: 0 -5px;
+  padding: 0;
+  list-style: none;
+
+  @include breakpoint($bp-sm) {
+    height: 100vh;
+    padding: $space;
+    margin: 0;
+    overflow: auto;
+  }
+
+  li {
+    display: inline-block;
+    margin: 5px;
+
+    @include breakpoint($bp-sm) {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      display: block;
+
+      @include breakpoint($bp-sm) {
+        order: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+// colors
+$red: #ce312c;
+$red-light: #ff372d;
+$black: #393939;
+$black-light: #888888;
+$black-lighter: #182337;
+$grey: #e1e1e1;
+$grey-light: #4b5767;
+$grey-lighter: #879cb9;
+$white-dark: #ededed;
+$white: #ffffff;
+$silver: silver;
+
+$success: #62bb47;
+$caution: #fdbb00;
+$warning: #fb8844;
+$failure: #fd545b;
+
+// breakpoints
+$bp-sm: 480px;
+$bp-md: 720px;
+$bp-lg: 960px;
+$bp-xl: 1800px;
+$max-width: 1000px;
+$content: 760px;
+
+// typography
+$space: 20px;
+$space-large: 30px;
+$content-vertical-padding: 110px;
+$footer-height: 190px;
+
+// shape
+$box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.09);
+$border-radius: 3px;
+
+// fonts
+$font-default: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; // Typekit
+$font-primary: 'Josefin Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial,
+  sans-serif; // TypeKit
+$font-secondary: 'Merriweather', Georgia, 'Times New Roman', serif; // TypeKit
+$font-icons: '4players'; // Fontastic.me

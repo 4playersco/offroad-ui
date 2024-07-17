@@ -1,0 +1,5 @@
+mutation UPDATE_RIG($data: ImageUpdateInput!) {
+  updateRig(data: $data) {
+    message
+  }
+}

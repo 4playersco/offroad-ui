@@ -1,0 +1,27 @@
+@import "@/styles/utilities";
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.form {
+  @extend %form;
+}
+
+.form-field-wrapper {
+  @extend %form-field-wrapper;
+}
+
+.form-field {
+  @extend %form-field;
+}
+
+.form-label {
+  @extend %form-label;
+}
+
+.form-footer {
+  @extend %form-footer;
+}
+
+.recaptcha {
+  @extend %form-captcha;
+}

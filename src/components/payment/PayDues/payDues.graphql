@@ -1,0 +1,5 @@
+mutation PAY_DUES_MUTATION($data: DuesPaymentInput!) {
+  payMembershipDues(data: $data) {
+    message
+  }
+}

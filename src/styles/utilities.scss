@@ -1,0 +1,38 @@
+@import "./variables";
+@import "./mixins";
+@import "./partials/form";
+@import "./partials/tables";
+
+// Reusable styles to be composed
+%dashboard-heading {
+  margin: 0 0 (calc($space / 2));
+  padding-bottom: 4px;
+  line-height: 1;
+  border-bottom: 2px solid $grey-lighter;
+
+  @include breakpoint($bp-md) {
+    padding-bottom: 8px;
+    margin: 0 0 $space;
+  }
+}
+
+%nothing-scheduled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  font-size: 30px;
+  background: $grey-light;
+  color: white;
+}
+
+%switch-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin: calc($space / 2);
+
+  @include breakpoint($bp-md) {
+    margin: $space;
+  }
+}

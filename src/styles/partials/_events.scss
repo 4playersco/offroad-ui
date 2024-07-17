@@ -1,0 +1,397 @@
+@mixin event-details {
+  &__header {
+    margin-bottom: $space;
+
+    @include breakpoint($bp-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  %event-icon {
+    font-size: 2.4rem;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__type-icon {
+    &--run {
+      @extend %event-icon;
+      color: $grey-light;
+    }
+
+    &--social {
+      @extend %event-icon;
+      color: $grey-light;
+    }
+
+    &--fundraising {
+      @extend %event-icon;
+      color: $grey-light;
+    }
+
+    &--collection {
+      @extend %event-icon;
+      color: $grey-light;
+    }
+
+    &--meeting {
+      @extend %event-icon;
+      color: $grey-light;
+    }
+
+    &--clinic {
+      @extend %event-icon;
+      color: $grey-light;
+    }
+
+    &--camping {
+      @extend %event-icon;
+      color: $grey-light;
+    }
+  }
+
+  &__date {
+    color: $black-light;
+    margin-bottom: 15px;
+
+    small {
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__title--heading {
+    margin: 0;
+    line-height: 1;
+  }
+
+  &__leader {
+    border-radius: 50%;
+    border: 1px solid $black-light;
+    height: 22px;
+    width: 22px;
+  }
+
+  &__rsvp {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint($bp-md) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__details {
+    @include breakpoint($bp-md) {
+    }
+  }
+
+  &__aside {
+    @include breakpoint($bp-md) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
+  &__aside-wrapper {
+    top: 20px;
+    font-size: 1.6rem;
+    margin-bottom: calc($space / 2);
+
+    @include breakpoint($bp-md) {
+      display: block;
+      position: sticky;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: 30px auto;
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+
+    dt {
+      text-align: center;
+    }
+
+    dd {
+      padding-top: 2px;
+      margin-bottom: calc($space / 2);
+
+      @include breakpoint($bp-xl) {
+        margin-bottom: $space;
+      }
+    }
+
+    small {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    p {
+      margin-top: 0;
+      text-align: right;
+
+      @include breakpoint($bp-sm) {
+        max-width: 50%;
+      }
+
+      @include breakpoint($bp-md) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__map-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__section {
+    padding: 0;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    & + & {
+      margin-top: calc($space / 2);
+
+      @include breakpoint($bp-sm) {
+        margin-top: $space;
+      }
+    }
+  }
+
+  &__host {
+    box-shadow: 0 0 0 1px $red-light;
+  }
+
+  &__card-heading {
+    margin: 0;
+    padding: 5px 20px 3px;
+    // color: $white;
+    text-transform: uppercase;
+    background: $white-dark;
+    display: flex;
+
+    &--first {
+      border-top: 1px solid $grey-lighter;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    // justify-content: space-evenly;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__stat {
+    text-align: center;
+    padding: 10px 20px 10px;
+    font-size: 18px;
+    font-style: italic;
+    font-family: $font-secondary;
+    border-radius: 20px;
+    background: $white-dark;
+    // min-width: ;
+
+    @include breakpoint($bp-sm) {
+      font-size: 25px;
+    }
+  }
+
+  &__stat + &__stat {
+    margin-left: 20px;
+  }
+
+  &__stat--large {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: $font-primary;
+    line-height: 0.6;
+
+    @include breakpoint($bp-sm) {
+      font-size: 40px;
+    }
+  }
+
+  &__stat--newline {
+    font-size: 20px;
+    font-weight: 700;
+    // display: block;
+    font-family: $font-secondary;
+
+    @include breakpoint($bp-sm) {
+      font-size: 30px;
+    }
+  }
+
+  &__badge + &__badge {
+    margin-left: 5px;
+  }
+}
+
+@mixin event-card {
+  &__card {
+    border-bottom: 1px solid $grey-lighter;
+    padding: calc($space / 2);
+
+    @include breakpoint($bp-sm) {
+      padding: $space;
+    }
+
+    &:first-of-type {
+      border-top: 1px solid $grey-lighter;
+    }
+
+    &--leader {
+    }
+  }
+
+  &__main {
+    display: flex;
+  }
+
+  &__main-container {
+    display: flex;
+  }
+
+  &__avatar-wrapper {
+    position: relative;
+    margin-right: 10px;
+  }
+
+  &__avatar {
+    border: 3px solid $red;
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+
+    @include breakpoint($bp-md) {
+      height: 75px;
+      width: 75px;
+    }
+  }
+
+  &__badge + &__badge {
+    margin-left: 5px;
+  }
+
+  &__guestCount {
+    border-radius: 100%;
+    background: $red;
+    display: block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+
+    @include breakpoint($bp-md) {
+      bottom: 2px;
+      left: 2px;
+    }
+  }
+
+  &__main__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3,
+    p {
+      margin: 0;
+    }
+  }
+
+  &__open__button {
+    margin-left: auto;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  &__details {
+    display: none;
+    margin-top: 10px;
+
+    @include breakpoint($bp-sm) {
+      margin-top: $space;
+    }
+
+    &--open {
+      display: block;
+    }
+  }
+
+  &__details-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+
+    @include breakpoint($bp-lg) {
+      display: flex;
+    }
+
+    li {
+      margin: 5px 0;
+      padding: 0;
+      line-height: 1;
+      font-size: 14px;
+      font-weight: 700;
+
+      @include breakpoint($bp-md) {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      @include breakpoint($bp-lg) {
+        margin: 0 0 0 20px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__icon {
+      font-size: 30px;
+      height: 30px;
+      width: 30px;
+      margin-right: 3px;
+      margin-top: -3px;
+
+      &--location {
+        margin-right: -3px;
+      }
+    }
+  }
+}

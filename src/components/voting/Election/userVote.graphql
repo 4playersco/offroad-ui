@@ -1,0 +1,7 @@
+query GET_USER_VOTE($ballot: ID) {
+  getUserVote(ballot: $ballot) {
+    candidate {
+      id
+    }
+  }
+}

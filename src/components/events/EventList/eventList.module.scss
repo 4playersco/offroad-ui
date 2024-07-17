@@ -1,0 +1,210 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.events {
+  @include breakpoint($bp-sm) {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  @include breakpoint($bp-md) {
+    width: 450px;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.events-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.event-wrapper {
+  padding: 0;
+  margin: 0 0 (calc($space / 2));
+
+  @include breakpoint($bp-sm) {
+    & + & {
+      padding-top: (calc($space / 2));
+    }
+  }
+
+  @include breakpoint($bp-md) {
+    & + & {
+      padding-top: $space;
+    }
+  }
+}
+
+.event {
+  border: 1px solid $grey-lighter;
+  padding: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    padding: $space;
+  }
+}
+
+.event__header {
+  margin-bottom: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    display: flex;
+    margin-bottom: $space;
+  }
+}
+
+.event__header-details {
+  margin-right: 10px;
+
+  @include breakpoint($bp-sm) {
+  }
+}
+
+.event-details {
+  width: 100%;
+}
+
+.event-image {
+  margin-left: auto;
+  width: 100%;
+  height: auto;
+
+  @include breakpoint($bp-sm) {
+    max-width: 50%;
+  }
+
+  @include breakpoint($bp-md) {
+    height: 100px;
+    width: 150px;
+  }
+}
+
+.event-date {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+
+  @include breakpoint($bp-md) {
+    font-size: 1.8rem;
+  }
+}
+
+.event-title {
+  line-height: 1;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  margin: 0;
+  margin-bottom: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    margin-bottom: calc($space / 2);
+  }
+
+  a {
+    color: #000;
+  }
+}
+
+.event__badge {
+  margin: 0 0 (calc($space / 2));
+
+  & + & {
+    margin-left: 5px;
+  }
+
+  @include breakpoint($bp-sm) {
+    margin-bottom: $space;
+  }
+}
+
+.event-location {
+  color: $grey-lighter;
+}
+
+.event-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-attendees {
+  display: flex;
+  align-items: center;
+}
+
+.event-attendees__avatars {
+  margin-right: 7px;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 3px solid $white;
+    background: $grey;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+
+    :nth-of-type(1) {
+      z-index: 3;
+    }
+
+    :nth-of-type(2) {
+      z-index: 2;
+    }
+
+    :nth-of-type(3) {
+      z-index: 1;
+    }
+
+    & + img {
+      margin-left: -15px;
+    }
+  }
+
+  @include clearfix;
+}
+
+.event-attendees__badge {
+  margin-bottom: 0;
+}
+
+.event-attendees__count {
+  font-family: $font-primary;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-top: 5px;
+
+  @include breakpoint($bp-sm) {
+    margin-top: 7px;
+    font-size: 1.6rem;
+  }
+}
+
+.event-attendees__number {
+  font-size: 1.6rem;
+  margin-right: 2px;
+
+  @include breakpoint($bp-sm) {
+    margin-right: 3px;
+    margin-top: 7px;
+    font-size: 1.9rem;
+  }
+}
+
+.event-rsvp {
+  margin-left: auto;
+}
+
+.event-comment-count {
+  margin-right: 20px;
+}

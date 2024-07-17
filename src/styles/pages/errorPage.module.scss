@@ -1,0 +1,37 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.error {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #747474;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    background: url("/img/bg-404-2.jpg") center center no-repeat;
+    background-size: cover;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.error-msg {
+  margin-top: 30px;
+  background: white;
+  padding: $space;
+  z-index: 1;
+
+  @include breakpoint($bp-sm) {
+    margin-top: 50px;
+  }
+
+  @include breakpoint($bp-md) {
+    margin-top: 100px;
+  }
+}

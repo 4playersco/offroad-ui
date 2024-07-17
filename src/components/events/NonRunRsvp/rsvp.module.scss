@@ -1,0 +1,169 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.rsvp {
+  &__attendees {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint($bp-md) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__count {
+    // margin-left: 10px;
+    font-size: 1.2rem;
+    color: $black-light;
+  }
+
+  &__status--upcoming {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: $space;
+
+    @include breakpoint($bp-md) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+  }
+
+  &__status--past {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: $space;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint($bp-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__count--past {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  &__button {
+    border: none;
+    box-shadow: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+%rsvp-icon {
+  font-size: 4rem;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+}
+
+.icon {
+  @extend %rsvp-icon;
+
+  &--disabled {
+    cursor: not-allowed;
+
+    &:before,
+    &:hover:before {
+      transition: color 0.3s;
+      color: $grey;
+    }
+  }
+
+  &-yes {
+    @extend %rsvp-icon;
+
+    &:before {
+      transition: color 0.3s;
+      color: $grey-light;
+    }
+
+    &:hover:before {
+      transition: color 0.3s;
+      color: $success;
+    }
+
+    &--selected {
+      @extend %rsvp-icon;
+
+      &:before {
+        transition: color 0.3s;
+        color: $success;
+      }
+    }
+
+    &--not-selected {
+      @extend %rsvp-icon;
+      cursor: pointer;
+
+      &:before {
+        transition: color 0.3s;
+        color: $grey;
+      }
+
+      &:hover:before {
+        transition: color 0.3s;
+        color: $success;
+      }
+    }
+  }
+
+  &-no {
+    @extend %rsvp-icon;
+
+    &:before {
+      transition: color 0.3s;
+      color: $grey-light;
+    }
+
+    &:hover:before {
+      transition: color 0.3s;
+      color: $failure;
+    }
+
+    &--selected {
+      @extend %rsvp-icon;
+      cursor: not-allowed;
+
+      &:before {
+        transition: color 0.3s;
+        color: $failure;
+      }
+    }
+
+    &--not-selected {
+      @extend %rsvp-icon;
+      cursor: pointer;
+
+      &:before {
+        transition: color 0.3s;
+        color: $grey;
+      }
+
+      &:hover:before {
+        transition: color 0.3s;
+        color: $failure;
+      }
+    }
+  }
+}
+
+.rsvp-modal__container {
+  @include container;
+}
+
+.change-disabled {
+  padding: 8px 10px;
+  background: lighten($warning, 15%);
+}

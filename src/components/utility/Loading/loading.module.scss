@@ -1,0 +1,26 @@
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  // img
+  animation: loading 2s linear infinite;
+  display: inline-block;
+  height: 25px;
+  width: auto;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+.sm {
+  height: 25px;
+}
+
+.md {
+  height: 75px;
+}

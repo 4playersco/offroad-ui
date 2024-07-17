@@ -1,0 +1,6 @@
+mutation UPDATE_OFFICE_MUTATION($office: Office, $userId: ID!) {
+  updateOffice(office: $office, userId: $userId) {
+    id
+    office
+  }
+}

@@ -1,0 +1,14 @@
+query QUORUM_QUERY {
+  users(accountStatus: [ACTIVE, PAST_DUE], accountType: [FULL]) {
+    username
+    id
+    firstName
+    lastName
+    avatar {
+      id
+      url
+    }
+    accountType
+    accountStatus
+  }
+}

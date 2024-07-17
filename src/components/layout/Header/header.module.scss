@@ -1,0 +1,206 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+@import "@/styles/utilities";
+
+.header {
+  /* border-bottom: 5px solid ${({ theme }) => theme.colors.grey_light}; */
+  /* padding: 10px; */
+  margin-bottom: 7px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: white;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(white, 0.8) 0%,
+      rgba(white, 0.8) 100%
+    ),
+    url("/img/header.jpg");
+
+  text-align: center;
+  position: relative;
+  /* border-bottom: 1px solid lighten(${({ theme }) => theme.colors.grey_light}, 40%); */
+
+  @include breakpoint($bp-md) {
+    background-size: cover, 100%;
+    background-position: center;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(white, 1) 0%,
+        rgba(white, 0.5) 80%,
+        rgba(white, 0.5) 100%
+      ),
+      url("/img/header.jpg");
+  }
+
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -7px;
+    content: "";
+    height: 7px;
+    background: lighten($grey-light, 40%);
+    background-image: linear-gradient(
+      -90deg,
+      rgb(75, 87, 103) 0%,
+      rgb(255, 55, 45) 85%,
+      rgb(206, 49, 44) 95%
+    );
+  }
+}
+
+.nav {
+  padding: (calc($space / 2)) (calc($space / 2)) 0;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @include breakpoint($bp-sm) {
+    padding: $space $space 0;
+  }
+
+  @include breakpoint($bp-md) {
+    padding: $space;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include breakpoint($bp-xl) {
+    padding: $space 0;
+  }
+
+  &:last-child {
+    margin-left: auto;
+  }
+}
+
+.logo-image {
+  height: 40px;
+  width: 40px;
+  border-radius: 3px;
+  float: left;
+  margin-bottom: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    height: 60px;
+    width: auto;
+    border-radius: 7px;
+    margin-bottom: $space;
+  }
+
+  @include breakpoint($bp-md) {
+    margin-bottom: 0;
+  }
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint($bp-md) {
+    display: inline-block;
+  }
+}
+
+// Mobile
+.menu-toggle {
+  background: transparent;
+  border: none;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  // position: absolute;
+  // right: $space;
+  text-indent: -9999em;
+  // top: $space;
+  width: 40px;
+  margin-bottom: calc($space / 2);
+
+  @include breakpoint($bp-sm) {
+    margin-bottom: $space;
+  }
+
+  @include breakpoint($bp-md) {
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    @include icon;
+    transform: rotate(0);
+    display: block;
+    height: 100%;
+    left: 0;
+    line-height: 40px;
+    opacity: 1;
+    position: absolute;
+    text-align: center;
+    text-indent: 0;
+    top: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    width: 100%;
+  }
+
+  &:before {
+    content: "k";
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+
+  &:after {
+    transform: rotate(45deg);
+    content: "l";
+    font-size: 16px;
+    font-size: 2.4rem;
+    opacity: 0;
+
+    @include breakpoint($bp-sm) {
+      font-size: 3.4rem;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.menu-active {
+  &:before {
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  &:after {
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  & + :global(.nav) {
+  }
+}
+
+.list-heading {
+  display: none;
+
+  @include breakpoint($bp-md) {
+    float: left;
+    margin: 13px 0 0 10px;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-size: 3rem;
+    font-weight: 700;
+    color: $red-light;
+    transition: color 0.3s;
+    display: inline-block;
+  }
+
+  &:hover {
+    color: $red;
+    transition: color 0.3s;
+  }
+}
+
+.list-big-number {
+  font-size: 3.5rem;
+}

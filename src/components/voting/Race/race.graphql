@@ -1,0 +1,6 @@
+# mutation SUBMIT_VOTE_MUTATION($vote: VoteInput!) {
+#   submitVote(vote: $vote) {
+#     id
+#     message
+#   }
+# }

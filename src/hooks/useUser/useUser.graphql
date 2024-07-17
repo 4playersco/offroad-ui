@@ -1,0 +1,16 @@
+query CURRENT_USER_QUERY {
+  myself {
+    id
+    username
+    email
+    firstName
+    role
+    accountStatus
+    accountType
+    avatar {
+      id
+      url
+      smallUrl
+    }
+  }
+}

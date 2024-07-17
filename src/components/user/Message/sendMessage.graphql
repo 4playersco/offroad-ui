@@ -1,0 +1,9 @@
+mutation SEND_MESSAGE_MUTATION(
+  $to: [String!]!
+  $subject: String
+  $htmlText: String!
+) {
+  sendMessage(to: $to, subject: $subject, htmlText: $htmlText) {
+    message
+  }
+}

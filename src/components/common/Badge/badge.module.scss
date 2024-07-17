@@ -1,0 +1,35 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.badge {
+  text-transform: uppercase;
+  padding: 2px 5px;
+  line-height: 1;
+  font-size: 1.3rem;
+  background: $grey-light;
+  color: $white;
+  border-radius: 2px;
+  margin-bottom: 2px;
+  display: inline-block;
+  vertical-align: middle;
+
+  &--success {
+    background: $success;
+  }
+
+  &--caution {
+    background: $caution;
+  }
+
+  &--warning {
+    background: $warning;
+  }
+
+  &--fail {
+    background: $failure;
+  }
+
+  &--neutral {
+    background: $silver;
+  }
+}

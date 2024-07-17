@@ -1,0 +1,35 @@
+query EDIT_ELECTION_CANDIDATES_QUERY($id: ID!) {
+  getElection(id: $id) {
+    id
+    electionName
+    startTime
+    endTime
+    races {
+      id
+      title
+      desc
+      candidates {
+        id
+        firstName
+        lastName
+        avatar {
+          url
+        }
+      }
+      results {
+        candidate {
+          id
+        }
+        count
+      }
+    }
+  }
+  electionCandidates(accountType: FULL, accountStatus: ACTIVE) {
+    id
+    firstName
+    lastName
+    avatar {
+      url
+    }
+  }
+}

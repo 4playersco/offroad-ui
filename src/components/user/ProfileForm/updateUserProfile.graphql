@@ -1,0 +1,43 @@
+mutation USER_UPDATE_PROFILE_MUTATION(
+  $id: ID!
+  $firstName: String!
+  $lastName: String!
+  $username: String!
+  $gender: String!
+  $birthdate: DateTime!
+  $joined: DateTime
+  $contactInfoId: ID
+  $street: String!
+  $city: String!
+  $state: String!
+  $zip: String!
+  $phone: String!
+  $preferencesId: ID
+  $emergencyContactName: String!
+  $emergencyContactPhone: String!
+  $comfortLevel: TrailDifficulty
+) {
+  updateUserProfileSettings(
+    data: {
+      firstName: $firstName
+      lastName: $lastName
+      username: $username
+      gender: $gender
+      birthdate: $birthdate
+      joined: $joined
+      contactInfoId: $contactInfoId
+      street: $street
+      city: $city
+      state: $state
+      zip: $zip
+      phone: $phone
+      preferencesId: $preferencesId
+      emergencyContactName: $emergencyContactName
+      emergencyContactPhone: $emergencyContactPhone
+      comfortLevel: $comfortLevel
+    }
+    id: $id
+  ) {
+    message
+  }
+}

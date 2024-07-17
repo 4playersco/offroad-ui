@@ -1,0 +1,15 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.member__img {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border: 1px solid black;
+  position: relative;
+  vertical-align: middle;
+
+  @include breakpoint($bp-sm) {
+    margin: 0 auto;
+  }
+}

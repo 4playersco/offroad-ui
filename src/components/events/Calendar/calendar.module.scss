@@ -1,0 +1,40 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.calendar {
+  text-align: center;
+  padding: 3px;
+  border-radius: $border-radius;
+  border: 1px solid $grey;
+  background: $white-dark;
+  width: 36px;
+
+  @include breakpoint($bp-sm) {
+    padding: 5px;
+    width: 40px;
+    height: 45px;
+  }
+}
+
+.date {
+  color: $grey-light;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+
+  @include breakpoint($bp-sm) {
+    font-size: 2rem;
+  }
+}
+
+.month {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $black-light;
+  font-size: 1.2rem;
+  line-height: 1;
+
+  @include breakpoint($bp-sm) {
+    font-size: 1.2rem;
+  }
+}

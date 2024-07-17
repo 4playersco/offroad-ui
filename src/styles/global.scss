@@ -1,0 +1,113 @@
+@import "./variables.scss";
+
+:global {
+  html {
+    box-sizing: border-box;
+    font-family: $font-default;
+    /* Root for rems
+      62.5% takes 16px (browser default size for medium text) down to 10px
+      ref: http://clagnut.com/blog/348/ */
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    background: $white;
+    padding: 0;
+    margin: 0;
+    word-wrap: break-word;
+    font-kerning: normal;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    color: $black-lighter;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.2;
+
+    @media (min-width: $bp-md) {
+      font-size: 20px;
+      font-size: 2rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $red;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    transition: color 0.3s;
+  }
+
+  a:active,
+  a:hover {
+    outline-width: 0;
+    color: $red-light;
+  }
+
+  .notFoundPage {
+    background-size: cover;
+    background-position: center bottom;
+    height: 100%;
+    left: 0;
+    padding-top: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    @media (min-width: $bp-md) {
+      background-position: center;
+      padding-top: $content-vertical-padding;
+    }
+
+    &:before {
+      background: $grey-light;
+      content: "";
+      height: 100%;
+      left: 0;
+      opacity: 0.5;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    body {
+      background: transparent;
+    }
+  }
+
+  .ReactModal__Html--open,
+  .ReactModal__Body--open {
+    overflow: hidden !important; /* prevents background page from scrolling when the modal is open */
+  }
+
+  .ReactModal__Overlay {
+    position: fixed;
+    z-index: 999999;
+  }
+
+  .ReactModal__Content {
+    overflow-y: auto;
+    position: relative;
+  }
+}
+
+@font-face {
+  font-family: "4players";
+  src: url("/fonts/4players.eot");
+  src: url("/fonts/4players.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/4players.woff") format("woff"),
+    url("/fonts/4players.ttf") format("truetype"),
+    url("/fonts/4players.svg#4players") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

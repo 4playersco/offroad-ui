@@ -1,0 +1,5 @@
+mutation NEW_ACCOUNTS_REJECT_MUTATION($userId: ID!, $reason: String!) {
+  rejectNewAccount(userId: $userId, reason: $reason) {
+    message
+  }
+}

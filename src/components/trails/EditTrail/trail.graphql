@@ -1,0 +1,14 @@
+query EXISTING_TRAIL_QUERY($trailSlug: String!) {
+  trail: getTrail(slug: $trailSlug) {
+    id
+    name
+    slug
+    description
+    featuredImage {
+      id
+      url
+    }
+    trailheadCoords
+    address
+  }
+}

@@ -1,0 +1,25 @@
+mutation USER_UPDATE_RIG_MUTATION(
+  $id: ID
+  $year: Int
+  $make: String
+  $model: String
+  $trim: String
+  $name: String
+  $outfitLevel: OutfitLevel
+  $mods: [String]
+) {
+  updateVehicle(
+    id: $id
+    vehicle: {
+      year: $year
+      make: $make
+      model: $model
+      trim: $trim
+      name: $name
+      outfitLevel: $outfitLevel
+      mods: $mods
+    }
+  ) {
+    message
+  }
+}

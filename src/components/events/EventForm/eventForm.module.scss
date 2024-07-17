@@ -1,0 +1,25 @@
+@import "@/styles/utilities";
+
+.form {
+  @extend %form;
+}
+
+.form-field-wrapper {
+  @extend %form-field-wrapper;
+}
+
+.event-form-label {
+  @extend %form-label;
+}
+
+.event-form-field {
+  @extend %form-field;
+}
+
+.event-date-field {
+  @extend %date-field;
+}
+
+.form-footer {
+  @extend %form-footer;
+}

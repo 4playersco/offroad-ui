@@ -1,0 +1,6 @@
+mutation UPDATE_ROLE_MUTATION($role: Role, $userId: ID!) {
+  updateRole(role: $role, userId: $userId) {
+    id
+    role
+  }
+}

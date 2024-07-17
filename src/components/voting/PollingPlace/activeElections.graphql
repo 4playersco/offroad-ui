@@ -1,0 +1,7 @@
+query GET_ACTIVE_ELECTIONS {
+  getActiveElections {
+    id
+    electionName
+    endTime
+  }
+}

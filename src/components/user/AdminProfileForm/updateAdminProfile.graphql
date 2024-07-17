@@ -1,0 +1,21 @@
+mutation USER_ADMIN_UPDATE_PROFILE_MUTATION(
+  $id: ID!
+  $titles: [Title]
+  $office: String
+  $role: String!
+  $accountStatus: String!
+  $accountType: String!
+) {
+  updateUserAdminProfileSettings(
+    data: {
+      titles: $titles
+      office: $office
+      role: $role
+      accountStatus: $accountStatus
+      accountType: $accountType
+    }
+    id: $id
+  ) {
+    message
+  }
+}

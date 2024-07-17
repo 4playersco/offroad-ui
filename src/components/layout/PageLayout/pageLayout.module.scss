@@ -1,0 +1,16 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.container {
+  @include container;
+}
+
+.wrapper {
+  position: relative;
+  padding-bottom: $space;
+
+  @include breakpoint($bp-md) {
+    padding-bottom: 50px;
+    min-height: calc(100vh - #{$footer-height});
+  }
+}

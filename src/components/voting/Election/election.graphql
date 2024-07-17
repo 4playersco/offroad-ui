@@ -1,0 +1,30 @@
+query GET_ELECTION_QUERY($id: ID!) {
+  getElection(id: $id) {
+    electionName
+    races {
+      id
+      title
+      candidates {
+        id
+        joined
+        firstName
+        lastName
+        username
+        role
+        avatar {
+          url
+        }
+        vehicle {
+          year
+          make
+          model
+          trim
+          image {
+            id
+            smallUrl
+          }
+        }
+      }
+    }
+  }
+}
